@@ -15,6 +15,8 @@ class CriarTabelaAreas extends Migration
     {
         Schema::create('tb_area', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('area');
+            $table->boolean('situacao');
             $table->timestamps();
         });
     }

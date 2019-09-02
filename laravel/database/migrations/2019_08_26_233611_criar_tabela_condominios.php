@@ -15,6 +15,13 @@ class CriarTabelaCondominios extends Migration
     {
         Schema::create('tb_condominio', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nome');
+            $table->string('endereco');
+            $table->string('cnpj');
+            $table->string('cep');
+            $table->string('bairro');
+            $table->string('cidade');
+            $table->string('uf');
             $table->timestamps();
         });
     }

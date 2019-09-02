@@ -15,6 +15,9 @@ class CriarTabelaVisitantes extends Migration
     {
         Schema::create('tb_visitante', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nome');
+            $table->integer('rg')->unsigned();
+            $table->date('data_de_entrada');
             $table->timestamps();
         });
     }

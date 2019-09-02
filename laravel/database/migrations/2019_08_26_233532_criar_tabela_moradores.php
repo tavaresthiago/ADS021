@@ -15,6 +15,12 @@ class CriarTabelaMoradores extends Migration
     {
         Schema::create('tb_morador', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nome');
+            $table->string('cpf');
+            $table->string('email');
+            $table->string('telefone');
+            $table->string('placa');
+            $table->string('veiculo');
             $table->timestamps();
         });
     }

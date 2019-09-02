@@ -15,6 +15,7 @@ class CriarTabelaUnidades extends Migration
     {
         Schema::create('tb_unidade', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('unidade')->unsigned();
             $table->timestamps();
         });
     }
