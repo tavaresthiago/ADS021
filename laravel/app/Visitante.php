@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Visitante extends Model
 {
-    //
+    protected $table = 'tb_visitante';
 }
