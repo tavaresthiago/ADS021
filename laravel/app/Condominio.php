@@ -12,4 +12,20 @@ class Condominio extends Model
     {
         return $this->hasMany('App\Visitante');
     }
+    
+    public function unidade()
+    {
+        return $this->hasMany('App\Unidade');
+    }
+    
+    public function morador()
+    {
+        return $this->hasMany('App\Morador');
+    }
+    
+    public function area()
+    {
+        return $this->hasMany('App\Area');
+    }
+    
 }
