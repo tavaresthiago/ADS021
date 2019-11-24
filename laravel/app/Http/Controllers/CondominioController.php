@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 
 class CondominioController extends Controller
 {
+    public function __construct() {
+//        $this->middleware('auth');
+    }
+    
     public function listar(){
-        return Condominio::all();
+//        return Condominio::all();
+        return view('condominio.listarCondominio', ['condominios' => Condominio::paginate(5)]);
     }
     
     public function criar(){
-        
+        return view('condominio.criarCondominio');
     }
     
     public function editar($id){

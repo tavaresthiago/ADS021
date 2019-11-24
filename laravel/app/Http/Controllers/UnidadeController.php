@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 
 class UnidadeController extends Controller
 {
+    public function __construct() {
+//        $this->middleware('auth');
+    }
+    
     public function listar(){
-        return Unidade::all();
+//        return Unidade::all();
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('unidade.listarUnidade', ['unidades' => Unidade::paginate(5)], ['condominios' => $condominio_list]);
     }
     
     public function criar(){
-        
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('unidade.criarUnidade', ['condominios' => $condominio_list]);
     }
     
     public function editar($id){

@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 
 class MoradorController extends Controller
 {
+     public function __construct() {
+//        $this->middleware('auth');
+    }
+    
     public function listar(){
-        return Morador::all();
+//        return Morador::all();
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('morador.listarMorador', ['moradores' => Morador::paginate(5)], ['condominios' => $condominio_list]);
     }
     
     public function criar(){
-        
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('morador.criarMorador', ['condominios' => $condominio_list]);
     }
     
     public function editar($id){

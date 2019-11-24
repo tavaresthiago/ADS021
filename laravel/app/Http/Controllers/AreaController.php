@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 
 class AreaController extends Controller
 {
+    public function __construct() {
+//        $this->middleware('auth');
+    }
+
     public function listar(){
-        return Area::all();
+//        return Area::all();
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('area.listarArea', ['areas' => Area::paginate(5)], ['condominios' => $condominio_list]);
     }
     
     public function criar(){
-        
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('area.criarArea', ['condominios' => $condominio_list]);
     }
     
     public function editar($id){

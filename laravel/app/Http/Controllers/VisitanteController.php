@@ -8,11 +8,14 @@ use Illuminate\Http\Request;
 class VisitanteController extends Controller
 {
     public function listar(){
-        return Visitante::all();
+//        return Visitante::all();
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('visitante.listarVisitante', ['visitantes' => Visitante::paginate(5)], ['condominios' => $condominio_list]);
     }
     
     public function criar(){
-        
+        $condominio_list = \App\Condominio::pluck('nome', 'id')->all();
+        return view('visitante.criarVisitante', ['condominios' => $condominio_list]);
     }
     
     public function editar($id){
