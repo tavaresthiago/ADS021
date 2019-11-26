@@ -45,6 +45,8 @@ class MoradorController extends Controller
         $morador->telefone = $request->telefone;
         $morador->placa = $request->placa;
         $morador->veiculo = $request->veiculo;
+        $morador->situacao = $request->situacao;
+        $morador->unidade = $request->unidade;
         $morador->save();
         
         return redirect('morador/listar');

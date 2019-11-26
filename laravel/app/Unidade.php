@@ -13,8 +13,18 @@ class Unidade extends Model
         return $this->belongsTo('App\Condominio');
     }
     
+    public function morador()
+    {
+        return $this->belongsTo('App\Morador');
+    }
+    
     public function visitante()
     {
         return $this->hasMany('App\Visitante');
+    }
+    
+    public function reserva()
+    {
+        return $this->hasMany('App\Reserva');
     }
 }

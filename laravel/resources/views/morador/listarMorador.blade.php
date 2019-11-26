@@ -48,11 +48,11 @@
                             </tr>
                             @foreach($moradores as $morador)
                             <tr>
-                                <td>Unidade</td>
+                                <td>{{ $morador->unidade->unidade }}</td>
                                 <td>{{ $morador->nome }}</td>
                                 <td>{{ $morador->email }}</td>
                                 <td>{{ $morador->telefone }}</td>
-                                <td>Situação</td>
+                                <td>{{ $morador->situacao }}</td>
                             </tr>
                             @endforeach
                         </table>

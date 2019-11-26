@@ -58,3 +58,11 @@ Route::group(['prefix' => 'area'], function(){
    Route::get('{id}/remover', 'AreaController@remover');
    Route::post('salvar', 'AreaController@salvar');
 });
+
+Route::group(['prefix' => 'reserva'], function(){
+   Route::get('listar', 'ReservaController@listar');
+   Route::get('criar', 'ReservaController@criar');
+   Route::get('{id}/editar', 'ReservaController@editar');
+   Route::get('{id}/remover', 'ReservaController@remover');
+   Route::post('salvar', 'ReservaController@salvar');
+});

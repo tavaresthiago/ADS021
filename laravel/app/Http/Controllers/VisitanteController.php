@@ -38,6 +38,7 @@ class VisitanteController extends Controller
         $visitante->nome = $request->nome;
         $visitante->rg = $request->rg;
         $visitante->data_entrada = $request->data_entrada;
+        $visitante->unidade = $request->unidade;
         $visitante->save();
         
         return redirect('visitante/listar');
